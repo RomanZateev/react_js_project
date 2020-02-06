@@ -1,0 +1,23 @@
+{
+  "data":
+  [
+    {
+      "id": 1,
+      "name": "ratatui",
+      "description": "whsdsd",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png"
+    },
+    {
+      "id": 2,
+      "name": "blabla",
+      "description": "description2",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png"
+    },
+    {
+      "id": 3,
+      "name": "restaurant",
+      "description": "description3",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png"
+    }
+  ]
+}
