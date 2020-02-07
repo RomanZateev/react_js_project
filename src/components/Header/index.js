@@ -8,8 +8,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
-import Basket from "../../assets/basket.png";
-import Acount from "../../assets/acount.png";
+import Basket from "../../assets/basket.svg";
+import Acount from "../../assets/account.svg";
 import HeaderLogo from "../../assets/header-logo.png";
 import Dorm from "../../assets/dorm.png";
 import Background from "../../assets/header-bg.jpg";
@@ -119,7 +119,7 @@ export default function Header() {
         <a class="nav nav1" href="/restaurants">
           Delivery
         </a>
-        <a href="#">
+        <a>
           <img class="dormitory" src={Dorm} alt="logo" />
         </a>
         <a class="nav nav2" href="/foodsharing">

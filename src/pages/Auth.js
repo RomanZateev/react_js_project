@@ -9,6 +9,7 @@ import axios from "axios";
 import mock from "./mock.json";
 import { createMuiTheme } from "@material-ui/core/styles";
 import "react-notification-alert/dist/animate.css";
+import { withRouter } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -29,25 +30,19 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function SignIn() {
+function SignIn(props) {
   const classes = useStyles();
   const [email, setEmail] = useState("user@mail.com");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
 
+  console.log(props);
+
   const onSubmitForm = event => {
-    axios
-      .post("/", {
-        email: email,
-        password: password
-      })
-      .then(function(response) {
-        console.log(response);
-      })
-      .catch(function(error) {
-        window.location.reload();
-        console.log(error);
-      });
+    if (email === "admin" && password === "admin") {
+      props.history.push("/");
+    } else {
+    }
   };
 
   const onGet = event => {
@@ -127,4 +122,8 @@ export default function SignIn() {
       </div>
     </Container>
   );
+}
+
+export default withRouter(SignIn);
+{
 }

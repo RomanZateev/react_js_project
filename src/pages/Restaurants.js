@@ -40,7 +40,7 @@ export default function Restaurants() {
   //http://172.20.37.48:8484/restaurant
   useEffect(() => {
     axios
-      .get("/localhost", {
+      .get("http://172.20.37.106:8484/restaurant", {
         params: {
           ID: 12345
         }
@@ -90,8 +90,9 @@ export default function Restaurants() {
         />
         {rests.map(rest => {
           if (
-            rest.name.toLowerCase().indexOf(search.toLowerCase()) !== -1 ||
-            search === ""
+            (rest.name.toLowerCase().indexOf(search.toLowerCase()) !== -1 ||
+              search === "") &&
+            rest.name.toLowerCase().indexOf(search.toLowerCase()) === 0
           ) {
             return (
               <Grid item xs={12} md={12}>
@@ -111,10 +112,10 @@ export default function Restaurants() {
                     <div className={classes.cardDetails}>
                       <CardContent>
                         <Typography component="h2" variant="h5">
-                          Название ресторана: {rest.name}
+                          {rest.name}
                         </Typography>
                         <Typography variant="subtitle1" color="textSecondary">
-                          Описание ресторана: {rest.description}
+                          {rest.description}
                         </Typography>
                         <Typography variant="subtitle1" paragraph></Typography>
                       </CardContent>
