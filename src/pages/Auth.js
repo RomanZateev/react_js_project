@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import axios from "axios";
-import mock from "./mock.json";
-import { createMuiTheme } from "@material-ui/core/styles";
 import "react-notification-alert/dist/animate.css";
 import { withRouter } from "react-router-dom";
 
@@ -16,11 +12,13 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    color: "white"
+    color: "white",
+    backgroundImage: "none",
+    paddingTop: theme.spacing(7)
   },
   form: {
     width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(1)
+    marginTop: theme.spacing(3)
   },
   submit: {
     margin: theme.spacing(3, 0, 2)
@@ -34,54 +32,40 @@ function SignIn(props) {
   const classes = useStyles();
   const [email, setEmail] = useState("user@mail.com");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
+  const [err, setErr] = useState("1");
 
-  console.log(props);
+  const [values, setValues] = React.useState({
+    amount: "",
+    password: "",
+    weight: "",
+    weightRange: "",
+    showPassword: false
+  });
 
   const onSubmitForm = event => {
     if (email === "admin" && password === "admin") {
       props.history.push("/");
     } else {
+      setErr("");
+      console.log("email", email);
+      console.log("password", password);
     }
   };
 
-  const onGet = event => {
-    axios
-      .get("https://swapi.co/api/people/m", {
-        params: {
-          ID: 12345
-        }
-      })
-      .then(function(response) {
-        console.log(response);
-        if ("data" in response) {
-          console.log(response.data.name);
-          setName(response.data.name);
-        }
-      })
-      .catch(function(error) {
-        console.log(error);
-        setName(mock.data.name);
-      })
-      .then(function() {
-        // always executed
-      });
-  };
-
   return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Typography component="h1" variant="h5">
-          Вход в Rich Dostavka {name}
+    <Container component="main" maxWidth="xs" className={classes.paper}>
+      <div>
+        <Typography component="h3" variant="h7">
+          ЛОГИН
         </Typography>
         <TextField
+          error={err === ""}
+          helperText={err === "" ? "Некорректный ввод!" : " "}
           variant="outlined"
           margin="normal"
           required
           fullWidth
           id="login"
-          label="Логин"
           name="login"
           autoComplete="login"
           autoFocus
@@ -92,13 +76,17 @@ function SignIn(props) {
           }}
           onChange={event => setEmail(event.target.value)}
         />
+        <Typography component="h3" variant="h7">
+          ПАРОЛЬ
+        </Typography>
         <TextField
+          error={err === ""}
+          helperText={err === "" ? "Некорректный ввод!" : " "}
           variant="outlined"
           margin="normal"
           required
           fullWidth
           name="password"
-          label="Пароль"
           type="password"
           id="password"
           autoComplete="current-password"

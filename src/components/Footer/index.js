@@ -1,8 +1,5 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
-import Link from "@material-ui/core/Link";
 import Background from "../../assets/header-bg.jpg";
 import "../../assets/style.css";
 
@@ -65,12 +62,6 @@ export default function Footer() {
   return (
     <React.Fragment>
       <footer style={sectionStyle}>
-        {/* <Typography variant="h6" align="center" gutterBottom>
-                  <Link color="textPrimary" className={classes.link} href="/">
-                      RICH DOSTAVKA
-                  </Link>
-              </Typography> */}
-
         <div class="feedback">
           <i class="fa fa-phone"></i>
           <a href="#">+7-800-555-35-35</a>
@@ -85,13 +76,13 @@ export default function Footer() {
         </div>
         <div class="social_footer">
           <a href="#">
-            <i class="fa fa-vk" aria-hidden="true"></i>
+            <i class="fa fa-vk fa-5" aria-hidden="true"></i>
           </a>
           <a href="#">
-            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-facebook fa-5" aria-hidden="true"></i>
           </a>
           <a href="#">
-            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-instagram fa-5" aria-hidden="true"></i>
           </a>
           <a href="#">
             <i class="fa fa-youtube" aria-hidden="true"></i>
