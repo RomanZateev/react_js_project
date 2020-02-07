@@ -5,11 +5,20 @@ import Delivery from "../assets/delivery.png";
 import choice from "../assets/choice.png";
 import food from "../assets/food.png";
 import MainHeader from "../assets/main-header.png";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles({
+  backGround: {
+    backgroundImage: "none"
+  }
+});
 
 export default function Home() {
+  const classes = useStyles();
+
   return (
     <Container maxWidth="lg">
-      <main>
+      <main className={classes.backGround}>
         <div class="main-header">
           <img src={MainHeader} alt="logodd" />
         </div>

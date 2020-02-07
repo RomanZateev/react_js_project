@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../Header";
 import Footer from "../Footer";
 import Background from "../../assets/main.bg.jpg";
+import Restaurants from "../../pages/Restaurants";
 
 var sectionStyle = {
   width: "100%",

@@ -24,23 +24,28 @@ const useStyles = makeStyles({
   },
   multilineColor: {
     backgroundColor: "white"
+  },
+  backGround: {
+    backgroundImage: "none"
   }
 });
 
-export default function Restaurants() {
+export default function Restaurants(props) {
   const classes = useStyles();
   const [rests, setRests] = useState([]);
   const [search, setSearch] = useState("");
 
   let history = useHistory();
 
-  function handleClick(e, id) {
+  function handleClick(e, id, name) {
+    localStorage.setItem("restaurant", name);
     history.push("/restaurants/" + id);
   }
-  //http://172.20.37.48:8484/restaurant
+
+  //"http://172.20.37.106:8484/restaurant"
   useEffect(() => {
     axios
-      .get("http://172.20.37.106:8484/restaurant", {
+      .get("localhost/restaurant", {
         params: {
           ID: 12345
         }
@@ -64,7 +69,7 @@ export default function Restaurants() {
   };
   return (
     <Container maxWidth="lg">
-      <main>
+      <main className={classes.backGround}>
         <Typography
           component="h2"
           variant="h2"
@@ -98,9 +103,9 @@ export default function Restaurants() {
               <Grid item xs={12} md={12}>
                 <CardActionArea
                   component="a"
-                  href=""
+                  href="#"
                   // onClick={((e) => onClick(e, rest))}
-                  onClick={e => handleClick(e, rest.id)}
+                  onClick={e => handleClick(e, rest.id, rest.name)}
                   id={rest.id}
                 >
                   <Card className={classes.card}>

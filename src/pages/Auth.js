@@ -34,21 +34,11 @@ function SignIn(props) {
   const [password, setPassword] = useState("");
   const [err, setErr] = useState("1");
 
-  const [values, setValues] = React.useState({
-    amount: "",
-    password: "",
-    weight: "",
-    weightRange: "",
-    showPassword: false
-  });
-
   const onSubmitForm = event => {
     if (email === "admin" && password === "admin") {
       props.history.push("/");
     } else {
       setErr("");
-      console.log("email", email);
-      console.log("password", password);
     }
   };
 

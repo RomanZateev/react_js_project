@@ -1,3 +1,4 @@
+// Делал с локальным mock.RF
 // import React, { useState, useEffect } from "react";
 // import { makeStyles } from "@material-ui/core/styles";
 // import axios from "axios";
@@ -147,7 +148,6 @@
 //     </Container>
 //   );
 // }
-
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import Container from "@material-ui/core/Container";
@@ -176,6 +176,9 @@ const useStyles = makeStyles({
   },
   multilineColor: {
     backgroundColor: "white"
+  },
+  backGround: {
+    backgroundImage: "none"
   }
 });
 
@@ -185,7 +188,9 @@ const useStylesNEW = makeStyles({
   }
 });
 
-export default function Restaurants(props) {
+export default function Food(props) {
+  console.log("props", props);
+
   const classes = useStyles();
   const classesNEW = useStylesNEW();
 
@@ -194,18 +199,11 @@ export default function Restaurants(props) {
 
   let { id } = useParams();
 
-  let history = useHistory();
+  //http://172.20.37.106:8484/restaurant/
 
-  function handleClick(e, id) {
-    history.push("/restaurants/");
-  }
-
-  console.log("darova");
-
-  //http://172.20.37.48:8484/restaurant
   useEffect(() => {
     axios
-      .get("http://172.20.37.106:8484/restaurant/" + id, {
+      .get("localhost/restaurant/" + id, {
         params: {
           ID: 12345
         }
@@ -229,14 +227,14 @@ export default function Restaurants(props) {
   };
   return (
     <Container maxWidth="lg">
-      <main>
+      <main className={classes.backGround}>
         <Typography
           component="h2"
           variant="h2"
           align="center"
           style={{ color: "#FFF" }}
         >
-          Меню ресторана
+          Меню ресторана: {localStorage.getItem("restaurant")}
         </Typography>
         <TextField
           variant="outlined"
@@ -265,7 +263,7 @@ export default function Restaurants(props) {
                   component="a"
                   href=""
                   // onClick={((e) => onClick(e, rest))}
-                  onClick={e => handleClick(e, rest.id)}
+                  // onClick={e => handleClick(e, rest.id)}
                   id={rest.id}
                 >
                   <Card className={classes.card}>
