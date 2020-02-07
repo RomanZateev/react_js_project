@@ -48,8 +48,7 @@ export default function FoodSharing() {
             <div class="form-right-decoration"></div>
             <div class="circle"></div>
             <div class="form-inner">
-              <h3>Написать нам</h3>
-              <input type="text" placeholder="Username"></input>
+              <h3>Написать на форум</h3>
               <textarea placeholder="Сообщение..." rows="3"></textarea>
               <input type="submit" value="Отправить"></input>
             </div>
