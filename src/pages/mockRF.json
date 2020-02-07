@@ -1,23 +1,31 @@
 {
-  "data":
-  [
-    {
-      "id": 1,
-      "name": "ratatui",
-      "description": "whsdsd",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png"
-    },
-    {
-      "id": 2,
-      "name": "blabla",
-      "description": "description2",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png"
-    },
-    {
-      "id": 3,
-      "name": "restaurant",
-      "description": "description3",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png"
-    }
-  ]
+  "data": {
+    "id": 1,
+    "name": "MAC",
+    "description": "MAC MAC",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png",
+    "meals": [
+      {
+        "id": 1,
+        "name": "бургер",
+        "description": "очень вкусный",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png",
+        "price": "200"
+      },
+      {
+        "id": 2,
+        "name": "картошка",
+        "description": "картошка очень вкусная",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png",
+        "price": "300"
+      },
+      {
+        "id": 3,
+        "name": "стрипсы",
+        "description": "стрипсы очень вкусные",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png",
+        "price": "100"
+      }
+    ]
+  }
 }
