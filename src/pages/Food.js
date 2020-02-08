@@ -163,6 +163,8 @@ import mockR from "./mockR.json";
 import TextField from "@material-ui/core/TextField";
 import { useHistory } from "react-router-dom";
 import { red } from "@material-ui/core/colors";
+import "../assets/style.css";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles({
   card: {
@@ -274,19 +276,38 @@ export default function Food(props) {
                     />
                     <div className={classes.cardDetails}>
                       <CardContent>
-                        <Typography component="h2" variant="h5">
-                          {rest.name}
-                        </Typography>
-                        <Typography variant="subtitle1" color="textSecondary">
-                          {rest.description}
-                        </Typography>
-                        <Typography
-                          variant="subtitle1"
-                          paragraph
-                          className={classesNEW.Typography}
+                        <Grid
+                          container
+                          direction="row"
+                          justify="space-between"
+                          alignItems="center"
                         >
-                          {rest.value} р
-                        </Typography>
+                          <div>
+                            <Typography component="h2" variant="h5">
+                              {rest.name}
+                            </Typography>
+                            <Typography
+                              variant="subtitle1"
+                              color="textSecondary"
+                            >
+                              {rest.description}
+                            </Typography>
+                            <Typography
+                              variant="subtitle1"
+                              paragraph
+                              className={classesNEW.Typography}
+                            >
+                              {rest.value} р
+                            </Typography>
+                          </div>
+                          <Button
+                            variant="contained"
+                            color="secondary"
+                            disableElevation
+                          >
+                            Заказать
+                          </Button>
+                        </Grid>
                       </CardContent>
                     </div>
                   </Card>
