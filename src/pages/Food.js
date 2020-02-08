@@ -201,8 +201,6 @@ export default function Food(props) {
 
   let { id } = useParams();
 
-  //http://172.20.37.106:8484/restaurant/
-
   useEffect(() => {
     axios
       .get("localhost/restaurant/" + id, {
@@ -261,57 +259,46 @@ export default function Food(props) {
           ) {
             return (
               <Grid item xs={12} md={12}>
-                <CardActionArea
-                  component="a"
-                  href=""
-                  // onClick={((e) => onClick(e, rest))}
-                  // onClick={e => handleClick(e, rest.id)}
-                  id={rest.id}
-                >
-                  <Card className={classes.card}>
-                    <CardMedia
-                      className={classes.cardMedia}
-                      image={rest.image}
-                      title={4}
-                    />
-                    <div className={classes.cardDetails}>
-                      <CardContent>
-                        <Grid
-                          container
-                          direction="row"
-                          justify="space-between"
-                          alignItems="center"
-                        >
-                          <div>
-                            <Typography component="h2" variant="h5">
-                              {rest.name}
-                            </Typography>
-                            <Typography
-                              variant="subtitle1"
-                              color="textSecondary"
-                            >
-                              {rest.description}
-                            </Typography>
-                            <Typography
-                              variant="subtitle1"
-                              paragraph
-                              className={classesNEW.Typography}
-                            >
-                              {rest.value} р
-                            </Typography>
-                          </div>
-                          <Button
-                            variant="contained"
-                            color="secondary"
-                            disableElevation
+                <Card className={classes.card}>
+                  <CardMedia
+                    className={classes.cardMedia}
+                    image={rest.image}
+                    title={4}
+                  />
+                  <div className={classes.cardDetails}>
+                    <CardContent>
+                      <Grid
+                        container
+                        direction="column"
+                        justify="space-between"
+                        alignItems="left"
+                      >
+                        <div>
+                          <Typography component="h2" variant="h5">
+                            {rest.name}
+                          </Typography>
+                          <Typography variant="subtitle1" color="textSecondary">
+                            {rest.description}
+                          </Typography>
+                          <Typography
+                            variant="subtitle1"
+                            paragraph
+                            className={classesNEW.Typography}
                           >
-                            Заказать
-                          </Button>
-                        </Grid>
-                      </CardContent>
-                    </div>
-                  </Card>
-                </CardActionArea>
+                            {rest.value} р
+                          </Typography>
+                        </div>
+                        <Button
+                          variant="contained"
+                          color="secondary"
+                          disableElevation
+                        >
+                          Заказать
+                        </Button>
+                      </Grid>
+                    </CardContent>
+                  </div>
+                </Card>
               </Grid>
             );
           }

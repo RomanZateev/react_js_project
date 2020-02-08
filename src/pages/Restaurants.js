@@ -42,7 +42,6 @@ export default function Restaurants(props) {
     history.push("/restaurants/" + id);
   }
 
-  //"http://172.20.37.106:8484/restaurant"
   useEffect(() => {
     axios
       .get("localhost/restaurant", {

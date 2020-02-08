@@ -24,7 +24,7 @@ export default function Home() {
         </div>
         <p class="main-dscr">Крупнейшая доставка еды в общежития</p>
         <div class="description">
-          <div class="main-delivery-speed">
+          <div class="main-delivery-speed-1">
             <img class="main-photo" src={choice} alt="" />
             <div class="main-text test">
               <h3 class="main-text-h3">Большой выбор</h3>

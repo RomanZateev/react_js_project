@@ -54,6 +54,7 @@ main {
 }
 .main-header {
   display: flex;
+  padding-top: 50px;
   justify-content: center;
 }
 .main-header img {
@@ -81,8 +82,15 @@ main {
   width: 102px;
   height: 102px;
 }
+.st1 {
+  margin-left: 10px;
+}
 .main-delivery-speed img {
   margin-left: -15px;
+  margin-top: 10px;
+}
+.main-delivery-speed-1 img {
+  margin-left: 0px;
   margin-top: 10px;
 }
 .main-food-sharing img {
@@ -120,6 +128,7 @@ main {
   height: 30px;
   display: inline-block;
   color: black;
+  padding-bottom: 50px;
   font-size: 125%;
   font-weight: 700;
   text-decoration: none;
